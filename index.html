@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <title>Redirecting...</title>
     <script>
-      // Берём параметр redirect_to из URL
+      console.log('Пробуем редирект...');
       const params = new URLSearchParams(window.location.search);
       const redirectTo = params.get('redirect_to');
+      console.log('redirect_to:', redirectTo);
 
       if (redirectTo) {
-        window.location.href = redirectTo; // Редиректим сразу
+        window.location.href = redirectTo;
       } else {
-        document.write('<p>❌ Ошибка: redirect_to не указан!</p>');
+        document.write('<p>❌ redirect_to не указан!</p>');
       }
     </script>
   </head>
