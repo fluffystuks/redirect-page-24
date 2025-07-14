@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url={{redirect_to}}">
+    <script>
+      // Берём параметр redirect_to из URL
+      const params = new URLSearchParams(window.location.search);
+      const redirectTo = params.get('redirect_to');
+
+      if (redirectTo) {
+        window.location.href = redirectTo; // Редиректим сразу
+      } else {
+        document.write('<p>❌ Ошибка: redirect_to не указан!</p>');
+      }
+    </script>
   </head>
   <body>
-    <p>Перенаправляем...</p>
+    <p>⏳ Перенаправляем...</p>
   </body>
 </html>
