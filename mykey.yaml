@@ -1,0 +1,21 @@
+proxies:
+  - name: "Buyers-Germany"
+    type: vless
+    server: 45.150.32.79
+    port: 433
+    uuid: 6b288fe1-875b-4899-89f6-3f62f45c5ea0
+    flow: ""
+    encryption: none
+    network: tcp
+    security: reality
+    fp: firefox
+    sni: www.ign.com
+
+proxy-groups:
+  - name: "Auto"
+    type: select
+    proxies:
+      - "Buyers-Germany"
+
+rules:
+  - MATCH,Auto
